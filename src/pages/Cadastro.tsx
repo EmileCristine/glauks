@@ -37,7 +37,7 @@ export function Cadastro(){
         try {
             await register(data.email, data.senha, data.nome);
             alert('Cadastro realizado com sucesso!');
-            navigate('/');
+            navigate('/inicial');
         } catch (error: any) {
             console.error('Erro no cadastro:', error);
             let errorMessage = 'Ocorreu um erro durante o cadastro';
