@@ -1,6 +1,6 @@
 import { useState, useEffect, useCallback } from 'react';
 import { ref, push, set } from 'firebase/database';
-import { db } from '../firebase/config'
+import { db } from '../firebase/config.js'
 import estilos from './AddLivro.module.css';
 import { CiImageOn } from "react-icons/ci";
 import { MdClose } from "react-icons/md";

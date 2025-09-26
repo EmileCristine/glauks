@@ -9,7 +9,7 @@ import {
   orderBy,
   where 
 } from "firebase/firestore";
-import { db } from "../firebase/config";
+import { firestore } from "../firebase/config.js";
 
 export interface LivroEmprestimo {
   id: string;
@@ -43,7 +43,7 @@ class FirestoreService {
   // Empréstimos
   async getEmprestimos(): Promise<LivroEmprestimo[]> {
     try {
-      const emprestimosRef = collection(db, "emprestimos");
+      const emprestimosRef = collection(firestore, "emprestimos");
       const q = query(emprestimosRef, orderBy("dataEmprestimo", "desc"));
       const querySnapshot = await getDocs(q);
       
@@ -59,7 +59,7 @@ class FirestoreService {
 
   async adicionarEmprestimo(emprestimo: Omit<LivroEmprestimo, 'id'>): Promise<LivroEmprestimo> {
     try {
-      const emprestimosRef = collection(db, "emprestimos");
+      const emprestimosRef = collection(firestore, "emprestimos");
       const docRef = await addDoc(emprestimosRef, emprestimo);
       
       return {
@@ -74,7 +74,7 @@ class FirestoreService {
 
   async atualizarEmprestimo(id: string, dados: Partial<LivroEmprestimo>): Promise<void> {
     try {
-      const emprestimoRef = doc(db, "emprestimos", id);
+      const emprestimoRef = doc(firestore, "emprestimos", id);
       await updateDoc(emprestimoRef, dados);
     } catch (error) {
       console.error("Erro ao atualizar empréstimo:", error);
@@ -92,7 +92,7 @@ class FirestoreService {
   // Reservas
   async getReservas(): Promise<Reserva[]> {
     try {
-      const reservasRef = collection(db, "reservas");
+      const reservasRef = collection(firestore, "reservas");
       const q = query(reservasRef, orderBy("dataReserva", "desc"));
       const querySnapshot = await getDocs(q);
       
@@ -108,7 +108,7 @@ class FirestoreService {
 
   async adicionarReserva(reserva: Omit<Reserva, 'id'>): Promise<Reserva> {
     try {
-      const reservasRef = collection(db, "reservas");
+      const reservasRef = collection(firestore, "reservas");
       const docRef = await addDoc(reservasRef, reserva);
       
       return {
@@ -123,7 +123,7 @@ class FirestoreService {
 
   async atualizarReserva(id: string, dados: Partial<Reserva>): Promise<void> {
     try {
-      const reservaRef = doc(db, "reservas", id);
+      const reservaRef = doc(firestore, "reservas", id);
       await updateDoc(reservaRef, dados);
     } catch (error) {
       console.error("Erro ao atualizar reserva:", error);
