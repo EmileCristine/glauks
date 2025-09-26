@@ -4,12 +4,10 @@ import {
   getDocs, 
   doc, 
   updateDoc, 
-  deleteDoc, 
   query, 
-  orderBy,
-  where 
+  orderBy
 } from "firebase/firestore";
-import { firestore } from "../firebase/config.js";
+import { firestore } from "../firebase/config";
 
 export interface LivroEmprestimo {
   id: string;

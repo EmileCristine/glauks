@@ -71,7 +71,7 @@ export function EmprestimoProvider({ children }: { children: ReactNode }) {
       const emprestimoAtualizado = await emprestimoService.devolverLivro(id);
       setEmprestimos(prev => prev.map(emprestimo => 
         emprestimo.id === id ? emprestimoAtualizado : emprestimo
-      ).filter(Boolean));
+      ));
     } catch (error) {
       console.error('Erro ao devolver livro:', error);
       throw error;

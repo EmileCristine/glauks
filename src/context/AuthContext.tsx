@@ -8,7 +8,7 @@ import {
   updateProfile
 } from "firebase/auth";
 import type { User } from "firebase/auth";
-import { auth } from "../firebase/config.js";
+import { auth } from "../firebase/config";
 
 interface AuthContextType {
   user: User | null;

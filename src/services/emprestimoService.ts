@@ -1,5 +1,5 @@
-import { ref, get, set, update, remove, push, query, orderByChild } from 'firebase/database';
-import { db } from '../firebase/config.js';
+import { ref, get, set, update, remove, push } from 'firebase/database';
+import { db } from '../firebase/config';
 
 export interface LivroEmprestimo {
   id: string;
