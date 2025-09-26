@@ -1,0 +1,13 @@
+.capa {
+    width: 125px;
+    height: 180px;
+    border-radius: 5px;
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+.capa:hover{
+    border-style: solid;
+    border-color: #01babf;
+    transition: 0.02s all;
+}

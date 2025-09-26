@@ -1,0 +1,142 @@
+.section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 2rem;
+    color: white;
+    height: 80px;
+    box-sizing: border-box;
+    object-fit: contain;
+}
+
+.pesquisa {
+    flex: 2;
+    margin-right: 2rem;
+    font-size: 14px;
+}
+
+.input {
+    display: flex;
+    align-items: center;
+    background-color: #fff;
+    border-radius: 30px;
+    padding: 0.5rem 1.5rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+
+}
+
+.input input {
+    border: none;
+    outline: none;
+    width: 100%;
+    margin-left: 10px;
+    font-size: 1rem;
+    background: transparent;
+    padding: 0.5rem 0;
+    color: #0d0d00;
+
+}
+
+.input input::placeholder {
+    color: #888;
+}
+
+.icon {
+    color: #555;
+    font-size: 1.2rem;
+}
+
+/* Área do perfil */
+.abaPerfil {
+    flex:1;
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    justify-content: end;
+}
+
+.notificacao {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.notificacao .icon {
+    color: #0d0d00;
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: transform 0.2s;
+    font-weight: bold;
+}
+
+.notificacao .icon:hover {
+    transform: scale(1.1);
+}
+
+.img {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.perfilImg{
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.adm {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 0.5rem;
+    cursor: pointer;
+    position: relative;
+}
+
+.adm h1 {
+    font-size: 1rem;
+    font-weight: 600;
+    margin: 0;
+    white-space: nowrap;
+    color: black;
+}
+
+.adm .icon {
+    color: #0d0d00;
+    font-size: 1rem;
+    transition: transform 0.2s;
+    margin-top: 10px;
+}
+
+/* tacar isso aqui em um sub-aba, somente disponivel ao clicar na setinha */
+.logoutBtn {
+    background: none;
+    border: none;
+    color: #0d0d00;
+    font-size: 1.5rem;
+    cursor: pointer;
+    padding: 0.5rem;
+    border-radius: 50%;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.logoutBtn:hover {
+    background-color: rgba(1, 186, 191, 0.1);
+    color: #01babf;
+    transform: scale(1.1);
+}

@@ -1,0 +1,329 @@
+.section {
+    display: grid;
+    height: auto;  
+    width: auto;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 20px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    background-color: #fff;
+    scrollbar-width: none;
+    gap: 10px;
+}
+
+.title {
+    color: #000;
+    font-weight: bolder;
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.livros {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 30px;
+    padding: 0 10px 20px 0;
+}
+
+.card {
+    background: #f5f5f59a;
+    border-radius: 15px;
+    padding: 10px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    gap: 20px;
+    width: max-content;
+
+}
+
+.card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+
+.controles{
+    display: flex;
+}
+
+.card img {
+    width: 120px;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 8px;
+    flex-shrink: 0;
+    background-color: #01babf;
+}
+
+.cardContent {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.card h3 {
+    font-size: 16px;
+    font-weight: bold;
+    margin: 0 0 6px 0;
+    color: #000;
+}
+
+.card p {
+    font-size: 14px;
+    margin: 2px 0;
+    color: #444;
+}
+
+.expira {
+    color: red;
+    font-weight: bold;
+}
+
+/* .btn {
+    margin-top: 8px;
+    background: #01babf;
+    color: #fff;
+    font-weight: bold;
+    padding: 6px 10px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    align-self: flex-start;
+}
+
+.btn:hover {
+    background: #05a5b1;
+} */
+
+.infoBusca {
+    flex: 1;
+}
+
+.buscaInfo {
+    color: #01babf;
+    font-size: 14px;
+    margin: 10;
+    font-weight: 500;
+}
+
+.erroInfo {
+    color: #d32f2f;
+    font-size: 14px;
+    margin: 5px 0 0 0;
+    font-weight: 500;
+}
+
+
+.btnAdicionar {
+    background: #01babf;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 15px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    font-size: 12px;
+}
+
+.btnAdicionar:hover {
+    background: #05a5b1;
+}
+
+
+.semDados {
+    text-align: center;
+    color: #666;
+    font-style: italic;
+    padding: 40px;
+    grid-column: 1 / -1;
+}
+
+/* Estilos para cards de empréstimo */
+.status {
+    margin-top: 10px;
+}
+
+.statusBadge {
+    display: inline-block;
+    padding: 4px 8px;
+    border-radius: 12px;
+    font-size: 12px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.statusBadge.emprestado {
+    background: #e3f2fd;
+    color: #19add2;
+}
+
+.statusBadge.atrasado {
+    background: #ffebee;
+    color: #d32f2f;
+}
+
+.statusBadge.devolvido {
+    background: #e8f5e8;
+    color: #388e3c;
+}
+
+.statusBadge.pendente {
+    background: #fff3e0;
+    color: #f57c00;
+}
+
+.statusBadge.disponivel {
+    background: #e8f5e8;
+    color: #388e3c;
+}
+
+.statusBadge.cancelada {
+    background: #f3e5f5;
+    color: #7b1fa2;
+}
+
+.btnDevolver, .btnAtraso, .btnCancelar, .btnConfirmar {
+    background: #01babf;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 15px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 12px;
+    margin-top: 10px;
+    transition: background-color 0.2s ease;
+    width: auto;
+}
+
+.btnDevolver:hover, .btnAtraso:hover, .btnCancelar:hover, .btnConfirmar:hover {
+    background: #05a5b1;
+}
+
+
+/* Modal styles */
+.modalOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.671);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    padding: 20px;
+}
+
+.modal {
+    background: white;
+    border-radius: 12px;
+    max-width: 500px;
+    width: 100%;
+    max-height: 90vh;
+    overflow-y: auto;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+    scrollbar-width: auto;
+    scrollbar-color: #01babf #f1f1f1;
+}
+
+.modalHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 30px;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.modalHeader h2 {
+    margin: 0;
+    color: #333;
+    font-size: 20px;
+}
+
+.closeButton {
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: #666;
+    padding: 0;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transition: background-color 0.2s ease;
+}
+
+.closeButton:hover {
+    background: #f0f0f0;
+    color: #333;
+}
+
+.form {
+    padding: 30px;
+}
+
+.formGroup {
+    margin-bottom: 20px;
+}
+
+.formGroup label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #333;
+}
+
+.formGroup input {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid #e0e0e0;
+    background-color: #fff;
+    color: #000;
+    border-radius: 8px;
+    font-size: 14px;
+    transition: border-color 0.2s ease;
+    box-sizing: border-box;
+}
+
+.formGroup input:focus {
+    outline: none;
+    border-color: #01babf;
+}
+
+.formActions {
+    display: flex;
+    gap: 15px;
+    justify-content: flex-end;
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid #e0e0e0;
+}
+
+.formGroup input[type="date"]::-webkit-calendar-picker-indicator {
+    filter: invert(38%) sepia(86%) saturate(1191%) hue-rotate(162deg) brightness(92%) contrast(101%);  /* manipulação da cor a partir de filtro */
+    cursor: pointer;
+}
+
+.formGroup input[type="date"]::-webkit-datetime-edit {
+    color: #333;
+}
+
+.formGroup input[type="date"]::-webkit-datetime-edit-fields-wrapper {
+    color: #333;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .livros {
+        grid-template-columns: 1fr;
+    }
+}
